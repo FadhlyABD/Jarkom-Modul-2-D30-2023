@@ -101,7 +101,7 @@ Yudhistira akan digunakan sebagai DNS Master, Werkudara sebagai DNS Slave, Arjun
   ```
 - Sehingga topologi dapat terlihat seperti pada gambar berikut.
   
-| <p align="center"> Membuat Topologi </p> |
+| <p align="center"> Topologi </p> |
 | -------------------------------------------- |
 | <img src="https://github.com/FadhlyABD/Jarkom-Modul-2-D30-2023/blob/main/Images/soal-1.png" width = "400"/> |
 
@@ -113,7 +113,16 @@ Buatlah website utama pada node arjuna dengan akses ke arjuna.yyy.com dengan ali
 - Dalam menyimpan script, disini dibagi dalam dua tempat, yaitu pada `/root/.bashrc` dan script buatan `domain.sh`.
 - `/root/.bashrc` digunakan untuk menyimpan script yang memang harus dijalankan saat booting (saat node di start) seperti script instalasi.
 - Sedangkan `domain.sh` digunakan untuk script yang sifatnya opsional seperti membuat akses domain dan seterusnya.
-- Untuk membuat domain `arjuna.d30.com` 
+- Untuk membuat domain `arjuna.d30.com`, buka web console pada node `YudhistiraDNSMaster` dan buat file `domain.sh` pada home (`~`).
+- Isikan script senagaimana berikut.
+
+| <p align="center"> domain.sh pada Yudhistira </p> |
+| -------------------------------------------- |
+| <img src="https://github.com/FadhlyABD/Jarkom-Modul-2-D30-2023/blob/main/Images/soal-2a.png" width = "400"/> |
+
+| <p align="center"> domain.sh pada Yudhistira </p> |
+| -------------------------------------------- |
+| <img src="https://github.com/FadhlyABD/Jarkom-Modul-2-D30-2023/blob/main/Images/soal-2b.png" width = "400"/> |
 
 ## Nomor 3
 
