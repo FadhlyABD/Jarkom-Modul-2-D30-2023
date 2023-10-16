@@ -14,8 +14,8 @@ Yudhistira akan digunakan sebagai DNS Master, Werkudara sebagai DNS Slave, Arjun
 **Penyelesaian**
 - Tambahkan 1 node NAT, 1 node ubuntu untuk Router bernama Pandudewanta, 2 node Switch, dan 6 node ubuntu yang masing-masing dinamai sesuai dengan soal diatas.
 - Tambahkan 2 node ubuntu lagi yang merupakan client dan masing-masing diberi nama Nakula dan Sadewa, buat juga hubungan antar node nya.
-- Pada masing-masing node ubuntu, setting network dengan konfigurasi sebagai berikut:
-  1. - RouterPandudewanta
+- Pada masing-masing node ubuntu, setting network dengan konfigurasi sebagai berikut `(Prefix IP: 192.206)`:
+  1. RouterPandudewanta
   ```
     auto eth0
     iface eth0 inet dhcp
@@ -35,46 +35,85 @@ Yudhistira akan digunakan sebagai DNS Master, Werkudara sebagai DNS Slave, Arjun
     	address 192.206.3.1
     	netmask 255.255.255.0
   ```
-  2. Loguetown
+  2. SadewaClient
   ```
   auto eth0
   iface eth0 inet static
-  	address [Prefix IP].1.2
+  	address 192.206.1.2
   	netmask 255.255.255.0
-  	gateway [Prefix IP].1.1
+  	gateway 192.206.1.1
   ```
-  3. Alabasta
+  3. NakulaClient
   ```
   auto eth0
   iface eth0 inet static
-  	address [Prefix IP].1.3
+  	address 192.206.1.3
   	netmask 255.255.255.0
-  	gateway [Prefix IP].1.1
+  	gateway 192.206.1.1
   ```
-  4. EniesLobby
+  4. YudhistiraDNSMaster
   ```
   auto eth0
   iface eth0 inet static
-  	address [Prefix IP].2.2
+  	address 192.206.2.2
   	netmask 255.255.255.0
-  	gateway [Prefix IP].2.1
+  	gateway 192.206.2.1
   ```
-  - Water7
+  5. WerkudaraDNSSlave
   ```
   auto eth0
   iface eth0 inet static
-  	address [Prefix IP].2.3
+  	address 192.206.3.2
   	netmask 255.255.255.0
-  	gateway [Prefix IP].2.1
+  	gateway 192.206.3.1
+  ```
+  6. ArjunaLoadBalancer
+  ```
+  auto eth0
+  iface eth0 inet static
+  	address 192.206.3.3
+  	netmask 255.255.255.0
+  	gateway 192.206.3.1
+  ```
+  7. AbimanyuWebServer
+  ```
+  auto eth0
+  iface eth0 inet static
+  	address 192.206.3.4
+  	netmask 255.255.255.0
+  	gateway 192.206.3.1
+  ```
+  9. PrabukusumaWebServer
+  ```
+  auto eth0
+  iface eth0 inet static
+  	address 192.206.3.5
+  	netmask 255.255.255.0
+  	gateway 192.206.3.1
+  ```
+  10. WisanggeniWebServer
+  ```
+  auto eth0
+  iface eth0 inet static
+  	address 192.206.3.6
+  	netmask 255.255.255.0
+  	gateway 192.206.3.1
   ```
 - Sehingga topologi dapat terlihat seperti pada gambar berikut.
+  
 | <p align="center"> Membuat Topologi </p> |
 | -------------------------------------------- |
 | <img src="https://github.com/FadhlyABD/Jarkom-Modul-2-D30-2023/blob/main/Images/soal-1.png" width = "400"/> |
 
 ## Nomor 2
-
 Buatlah website utama pada node arjuna dengan akses ke arjuna.yyy.com dengan alias www.arjuna.yyy.com dengan yyy merupakan kode kelompok.
+
+**Penyelesaian**
+- Untuk menerapkan tuntunan di modul dalam membuat domain, namun juga agar tidak perlu mengulang-ulang set up, maka kita perlu membuat script.
+- Dalam menyimpan script, disini dibagi dalam dua tempat, yaitu pada `/root/.bashrc` dan script buatan `domain.sh`.
+- `/root/.bashrc` digunakan untuk menyimpan script yang memang harus dijalankan saat booting (saat node di start) seperti script instalasi.
+- Sedangkan `domain.sh` digunakan untuk script yang sifatnya opsional seperti membuat akses domain dan seterusnya.
+- Untuk membuat domain `arjuna.d30.com` 
 
 ## Nomor 3
 
