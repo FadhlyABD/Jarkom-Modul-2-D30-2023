@@ -31,20 +31,20 @@ Buat juga reverse domain untuk domain utama. (Abimanyu saja yang direverse)
 **Penyelesaian**
 - Untuk mmembuat reserve domain untuk domain utama  pertama tama kita buat konfigurasinya di dalam `domain.sh`  di dalam `yudistira`
     
-| <p align="center"> FTP Request untuk mengunggah </p> |
+| <p align="center"> </p> |
 | -------------------------------------------- |
 | <img src="https://github.com/FadhlyABD/Jarkom-Modul-2-D30-2023/blob/main/Images/yudistira01.png" width = "400"/> |
 
 - script tersebut adalah untuk membuat konfigurasi reserve DNS domain abimanyu.d30.com
 - Setelah itu copy `/etc/bind/db.local` ke `/etc/bind/abimanyu/3.206.192.in-addr.arpa`
 
-| <p align="center"> FTP Request untuk mengunggah </p> |
+| <p align="center">  </p> |
 | -------------------------------------------- |
 | <img src="https://github.com/FadhlyABD/Jarkom-Modul-2-D30-2023/blob/main/Images/yudistira02.png" width = "400"/> |
 
 - Setelah itu Tambahkan script berikut di `domain.sh`  di dalam `yudistira`
 
-| <p align="center"> FTP Request untuk mengunggah </p> |
+| <p align="center">  </p> |
 | -------------------------------------------- |
 | <img src="https://github.com/FadhlyABD/Jarkom-Modul-2-D30-2023/blob/main/Images/yudistira03.png" width = "400"/> |
 
@@ -64,22 +64,22 @@ Agar dapat tetap dihubungi ketika DNS Server Yudhistira bermasalah, buat juga We
 **Penyelesaian**
 - Untuk membuat DNS Slave di werkudara pertama-tama kita tambahkan script berikut di dalam `bashrc` di dalam root werkudara :
   
-| <p align="center"> FTP Request untuk mengunggah </p> |
+| <p align="center"> </p> |
 | -------------------------------------------- |
 | <img src="https://github.com/FadhlyABD/Jarkom-Modul-2-D30-2023/blob/main/Images/werkudara01.png" width = "400"/> |
 
-| <p align="center"> FTP Request untuk mengunggah </p> |
+| <p align="center"> </p> |
 | -------------------------------------------- |
 | <img src="https://github.com/FadhlyABD/Jarkom-Modul-2-D30-2023/blob/main/Images/werkudara02.png" width = "400"/> |
 
 - Script tersebut berguna untuk melakukan update dan menginstall Bind9
 - Langkah selanjutnya adalah membuat `domain.sh` di root atau home,lalu tambahkan script berikut di dalamnya :
 
-| <p align="center"> FTP Request untuk mengunggah </p> |
+| <p align="center">  </p> |
 | -------------------------------------------- |
 | <img src="https://github.com/FadhlyABD/Jarkom-Modul-2-D30-2023/blob/main/Images/werkudara03.png" width = "400"/> |
 
-| <p align="center"> FTP Request untuk mengunggah </p> |
+| <p align="center">  </p> |
 | -------------------------------------------- |
 | <img src="https://github.com/FadhlyABD/Jarkom-Modul-2-D30-2023/blob/main/Images/werkudara04.png" width = "400"/> |
   
@@ -88,11 +88,11 @@ Agar dapat tetap dihubungi ketika DNS Server Yudhistira bermasalah, buat juga We
   ``also-notify { 192.206.3.2; }; // Masukan IP Werkudara tanpa tanda petik
     allow-transfer { 192.206.3.2; }; // Masukan IP Werkudara tanpa tanda petik``
 
-| <p align="center"> FTP Request untuk mengunggah </p> |
+| <p align="center">  </p> |
 | -------------------------------------------- |
 | <img src="https://github.com/FadhlyABD/Jarkom-Modul-2-D30-2023/blob/main/Images/werkudara05.png" width = "400"/> |
 
-| <p align="center"> FTP Request untuk mengunggah </p> |
+| <p align="center">  </p> |
 | -------------------------------------------- |
 | <img src="https://github.com/FadhlyABD/Jarkom-Modul-2-D30-2023/blob/main/Images/werkudara06.png" width = "400"/> |
   
@@ -105,14 +105,14 @@ Seperti yang kita tahu karena banyak sekali informasi yang harus diterima, buatl
 langkah untuk membuat subdomain baratayuda.abimanyu.d30.com dengan alias www.baratayuda.abimanyu.d30.com yang didelegasikan dari Yudhistira ke Werkudara dengan IP menuju ke Abimanyu dalam folder Baratayuda. adalah sebagai berikut : 
 - Pertama tama kita tambahkan dulu script berikut di dalam `domain.sh` di dalam `werkudara`
   
-| <p align="center"> FTP Request untuk mengunggah </p> |
+| <p align="center">  </p> |
 | -------------------------------------------- |
 | <img src="https://github.com/FadhlyABD/Jarkom-Modul-2-D30-2023/blob/main/Images/werkudara07.png" width = "400"/> |
 
 - Script tersebut berfungsi untuk membuat konfigurasi domain server `baratayuda.abimanyu.d30.com`
 - Lalu tambahkan script berikut di dalam `domain.sh` di dalam `werkudara`
   
-| <p align="center"> FTP Request untuk mengunggah </p> |
+| <p align="center">  </p> |
 | -------------------------------------------- |
 | <img src="https://github.com/FadhlyABD/Jarkom-Modul-2-D30-2023/blob/main/Images/werkudara08.png" width = "400"/> |
 
@@ -122,19 +122,19 @@ langkah untuk membuat subdomain baratayuda.abimanyu.d30.com dengan alias www.bar
 Dan memasukkan script tersebut di `/etc/bind/named.conf.options`
 - Lalu buat direktori baru dengan nama `delegasi` di dalam `/etc/bind`
  
-| <p align="center"> FTP Request untuk mengunggah </p> |
+| <p align="center">  </p> |
 | -------------------------------------------- |
 | <img src="https://github.com/FadhlyABD/Jarkom-Modul-2-D30-2023/blob/main/Images/werkudara09.png" width = "400"/> |
 
 - Lalu copy `/etc/bind/db.local` ke `/etc/bind/delegasi/baratayuda.abimanyu.d30.com` 
    
-| <p align="center"> FTP Request untuk mengunggah </p> |
+| <p align="center">  </p> |
 | -------------------------------------------- |
 | <img src="https://github.com/FadhlyABD/Jarkom-Modul-2-D30-2023/blob/main/Images/werkudara10.png" width = "400"/> |
 
 - Lalu tambah kan script berikut di `domain.sh` di dalam `Yudistira` : 
      
-| <p align="center"> FTP Request untuk mengunggah </p> |
+| <p align="center">  </p> |
 | -------------------------------------------- |
 | <img src="https://github.com/FadhlyABD/Jarkom-Modul-2-D30-2023/blob/main/Images/werkudara11.png" width = "400"/> |
 
@@ -142,7 +142,7 @@ Dan memasukkan script tersebut di `/etc/bind/named.conf.options`
 `baratayuda IN NS Ns1:` adalah catatan NS yang menunjukkan bahwa "baratayuda.abimanyu.d30.com" adalah zona yang diotorisasi oleh server "Ns1.abimanyu.d30.com".
 - Lalu tambahkan script berikut di `domain.sh` di dalam `Werkudara` :
      
-| <p align="center"> FTP Request untuk mengunggah </p> |
+| <p align="center">  </p> |
 | -------------------------------------------- |
 | <img src="https://github.com/FadhlyABD/Jarkom-Modul-2-D30-2023/blob/main/Images/werkudara12.png" width = "400"/> |
 
@@ -159,7 +159,7 @@ Untuk informasi yang lebih spesifik mengenai Ranjapan Baratayuda, buatlah subdom
 **Penyelesaian** 
 - Untuk membuat  subdomain melalui Werkudara dengan akses rjp.baratayuda.abimanyu.yyy.com dengan alias www.rjp.baratayuda.abimanyu.yyy.com yang mengarah ke Abimanyu. Pertama tama tambahkan script berikut di dalam `/etc/bind/delegasi/baratayuda.abimanyu.d30.com` di atas script `www     IN      CNAME   baratayuda.abimanyu.d30.com.`
      
-| <p align="center"> FTP Request untuk mengunggah </p> |
+| <p align="center">  </p> |
 | -------------------------------------------- |
 | <img src="https://github.com/FadhlyABD/Jarkom-Modul-2-D30-2023/blob/main/Images/werkudara13.png" width = "400"/> |
 
