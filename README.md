@@ -124,20 +124,27 @@ Buatlah website utama pada node arjuna dengan akses ke arjuna.yyy.com dengan ali
 | -------------------------------------------- |
 | <img src="https://github.com/FadhlyABD/Jarkom-Modul-2-D30-2023/blob/main/Images/soal-2b.png" width = "400"/> |
 
-## Nomor 3
+- Restart bind9 untuk DNS Server akan dilakukan di akhir.
 
+## Nomor 3 & 4
 Dengan cara yang sama seperti soal nomor 2, buatlah website utama dengan akses ke abimanyu.yyy.com dan alias www.abimanyu.yyy.com.
-
-## Nomor 4
-
 Kemudian, karena terdapat beberapa web yang harus di-deploy, buatlah subdomain parikesit.abimanyu.yyy.com yang diatur DNS-nya di Yudhistira dan mengarah ke Abimanyu.
 
-## Nomor 5
+**Penyelesaian**
+- Melanjutkan file script `domain.sh` pada node Yudhistira dengan menambahkan script sebagaimana berikut.
 
+| <p align="center"> domain.sh pada Yudhistira </p> |
+| -------------------------------------------- |
+| <img src="https://github.com/FadhlyABD/Jarkom-Modul-2-D30-2023/blob/main/Images/soal-3a.png" width = "400"/> |
+
+| <p align="center"> domain.sh pada Yudhistira </p> |
+| -------------------------------------------- |
+| <img src="https://github.com/FadhlyABD/Jarkom-Modul-2-D30-2023/blob/main/Images/soal-3b.png" width = "400"/> |
+
+## Nomor 5
 Buat juga reverse domain untuk domain utama. (Abimanyu saja yang direverse)
 
 ## Nomor 6
-
 Agar dapat tetap dihubungi ketika DNS Server Yudhistira bermasalah, buat juga Werkudara sebagai DNS Slave untuk domain utama.
 
 ## Nomor 7
