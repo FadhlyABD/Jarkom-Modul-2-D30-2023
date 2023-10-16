@@ -28,6 +28,20 @@ Kemudian, karena terdapat beberapa web yang harus di-deploy, buatlah subdomain p
 
 Buat juga reverse domain untuk domain utama. (Abimanyu saja yang direverse)
 
+**Penyelesaian**
+- Untuk mmembuat reserve domain untuk domain utama  pertama tama kita buat konfigurasinya di dalam `domain.sh`  di dalam `yudistira` (ss1)
+- script tersebut adalah untuk membuat konfigurasi reserve DNS domain abimanyu.d30.com
+- Setelah itu copy `/etc/bind/db.local` ke `/etc/bind/abimanyu/3.206.192.in-addr.arpa`
+- Setelah itu Tambahkan script berikut di `domain.sh`  di dalam `yudistira` (ss2)
+- Script `$TTL 604800:` Ini mengatur Time To Live (TTL) untuk zona DNS ini, yang menentukan berapa lama data DNS dapat disimpan dalam cache sebelum dianggap tidak valid.
+
+`@ IN SOA abimanyu.d30.com. root.abimanyu.d30.com. ( ... ):` Ini adalah catatan SOA (Start of Authority), yang menentukan informasi tentang zona seperti nama server otoritas (abimanyu.d30.com.), alamat email administrator (root.abimanyu.d30.com.), dan parameter lainnya seperti serial number, refresh interval, retry interval, dan expire interval.
+
+`3.206.192.in-addr.arpa. IN NS abimanyu.d30.com.:` Ini adalah catatan NS yang menunjukkan bahwa server otoritas untuk zona reverse lookup ini adalah "abimanyu.d30.com."
+
+`4 IN PTR abimanyu.d30.com.:` Ini adalah catatan PTR (Pointer) yang menentukan bahwa alamat IP "192.206.3.4" akan dihubungkan ke nama domain "abimanyu.d30.com." Dalam kata lain, ini adalah konfigurasi reverse DNS lookup yang menghubungkan alamat IP ke nama domain.
+Setelah itu script tersebut di masukkan ke dalam `/etc/bind/abimanyu/3.206.192.in-addr.arpa`
+
 ## Nomor 6
 
 Agar dapat tetap dihubungi ketika DNS Server Yudhistira bermasalah, buat juga Werkudara sebagai DNS Slave untuk domain utama.
