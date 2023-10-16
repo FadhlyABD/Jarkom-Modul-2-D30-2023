@@ -9,8 +9,64 @@
 Berikut adalah demo untuk praktikum modul 2
 
 ## Nomor 1
-
 Yudhistira akan digunakan sebagai DNS Master, Werkudara sebagai DNS Slave, Arjuna merupakan Load Balancer yang terdiri dari beberapa Web Server yaitu Prabakusuma, Abimanyu, dan Wisanggeni. Buatlah topologi sesuai dengan yang telah ditentukan (Topologi No.2 dalam drive soal). 
+
+**Penyelesaian**
+- Tambahkan 1 node NAT, 1 node ubuntu untuk Router bernama Pandudewanta, 2 node Switch, dan 6 node ubuntu yang masing-masing dinamai sesuai dengan soal diatas.
+- Tambahkan 2 node ubuntu lagi yang merupakan client dan masing-masing diberi nama Nakula dan Sadewa, buat juga hubungan antar node nya.
+- Pada masing-masing node ubuntu, setting network dengan konfigurasi sebagai berikut:
+  1. - RouterPandudewanta
+  ```
+    auto eth0
+    iface eth0 inet dhcp
+    
+    auto eth1
+    iface eth1 inet static
+    	address 192.206.1.1
+    	netmask 255.255.255.0
+    
+    auto eth2
+    iface eth2 inet static
+    	address 192.206.2.1
+    	netmask 255.255.255.0
+    
+    auto eth3
+    iface eth3 inet static
+    	address 192.206.3.1
+    	netmask 255.255.255.0
+  ```
+  2. Loguetown
+  ```
+  auto eth0
+  iface eth0 inet static
+  	address [Prefix IP].1.2
+  	netmask 255.255.255.0
+  	gateway [Prefix IP].1.1
+  ```
+  3. Alabasta
+  ```
+  auto eth0
+  iface eth0 inet static
+  	address [Prefix IP].1.3
+  	netmask 255.255.255.0
+  	gateway [Prefix IP].1.1
+  ```
+  4. EniesLobby
+  ```
+  auto eth0
+  iface eth0 inet static
+  	address [Prefix IP].2.2
+  	netmask 255.255.255.0
+  	gateway [Prefix IP].2.1
+  ```
+  - Water7
+  ```
+  auto eth0
+  iface eth0 inet static
+  	address [Prefix IP].2.3
+  	netmask 255.255.255.0
+  	gateway [Prefix IP].2.1
+  ```
 
 | <p align="center"> Membuat Topologi </p> |
 | -------------------------------------------- |
