@@ -67,7 +67,7 @@ Yudhistira akan digunakan sebagai DNS Master, Werkudara sebagai DNS Slave, Arjun
   	netmask 255.255.255.0
   	gateway [Prefix IP].2.1
   ```
-
+- Sehingga topologi dapat terlihat seperti pada gambar berikut.
 | <p align="center"> Membuat Topologi </p> |
 | -------------------------------------------- |
 | <img src="https://github.com/FadhlyABD/Jarkom-Modul-2-D30-2023/blob/main/Images/soal-1.png" width = "400"/> |
