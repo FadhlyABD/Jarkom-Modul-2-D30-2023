@@ -12,6 +12,10 @@ Berikut adalah demo untuk praktikum modul 2
 
 Yudhistira akan digunakan sebagai DNS Master, Werkudara sebagai DNS Slave, Arjuna merupakan Load Balancer yang terdiri dari beberapa Web Server yaitu Prabakusuma, Abimanyu, dan Wisanggeni. Buatlah topologi sesuai dengan yang telah ditentukan (Topologi No.2 dalam drive soal). 
 
+| <p align="center"> Membuat Topologi </p> |
+| -------------------------------------------- |
+| <img src="https://github.com/FadhlyABD/Jarkom-Modul-2-D30-2023/blob/main/Images/soal-1.png" width = "400"/> |
+
 ## Nomor 2
 
 Buatlah website utama pada node arjuna dengan akses ke arjuna.yyy.com dengan alias www.arjuna.yyy.com dengan yyy merupakan kode kelompok.
